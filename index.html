@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Bhure Foods – Authentic Indian Spices & Masalas | Karnataka</title>
+<meta name="description" content="Bhure Foods – Premium homemade-style Indian spices and masalas from Karnataka. 100% natural, freshly packed. Order on WhatsApp."/>
+<meta name="keywords" content="Bhure Foods, Indian spices, masala powder, Karnataka, chilli powder, garam masala, sambar masala"/>
+<meta property="og:title" content="Bhure Foods – Good Food for Good People"/>
+<meta property="og:description" content="Premium quality homemade-style masalas delivered fresh from Karnataka."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --red:#C0392B;--orange:#E67E22;--gold:#F39C12;--cream:#FDF6EC;
+  --brown:#5D3A1A;--green:#27AE60;--dark:#2C1810;--muted:#7A5C4A;
+  --white:#fff;--card:#FFFAF4;--border:#F0DCC4;--shadow:rgba(93,58,26,.13);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:999;background:var(--brown);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;box-shadow:0 3px 20px rgba(0,0,0,.3)}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;cursor:pointer}
+.logo-circle{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.logo-circle svg{width:26px;height:26px}
+.logo-text{color:#fff;font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;line-height:1.1}
+.logo-sub{color:var(--gold);font-size:.62rem;font-weight:600;letter-spacing:.08em;font-family:'Inter',sans-serif}
+.nav-links{display:flex;gap:1.4rem;list-style:none}
+.nav-links a{color:#F5D9B0;font-size:.88rem;font-weight:500;text-decoration:none;transition:color .2s;cursor:pointer}
+.nav-links a:hover{color:var(--gold)}
+.nav-wa{background:#25D366;color:#fff;padding:.45rem 1.1rem;border-radius:22px;font-size:.82rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-wa:hover{background:#1ebe59;transform:scale(1.04)}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:.2rem}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--brown);padding:1rem 1.2rem 1.5rem;flex-direction:column;gap:.2rem;z-index:998;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:#F5D9B0;text-decoration:none;font-size:.98rem;font-weight:500;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.09);cursor:pointer}
+.mobile-nav a:last-child{border:none;color:#25D366;font-weight:700}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+
+/* HERO */
+.hero{min-height:calc(100svh - 64px);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#3B0A0A 0%,var(--brown) 45%,#7A2200 100%);padding:2.5rem 1.2rem}
+.hero-blobs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.22}
+.b1{width:420px;height:420px;background:var(--red);top:-120px;right:-120px}
+.b2{width:300px;height:300px;background:var(--gold);bottom:-80px;left:-80px}
+.b3{width:200px;height:200px;background:var(--orange);top:45%;left:25%}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:680px}
+.badge-pill{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold);padding:.38rem 1rem;border-radius:22px;font-size:.78rem;font-weight:700;letter-spacing:.06em;margin-bottom:1.4rem;backdrop-filter:blur(8px)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,7vw,4rem);color:#fff;line-height:1.08;margin-bottom:.9rem;text-shadow:0 3px 24px rgba(0,0,0,.4)}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-p{color:#F0D5B0;font-size:clamp(.95rem,2.5vw,1.12rem);max-width:500px;margin:0 auto 2rem}
+.hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn-red{background:linear-gradient(135deg,var(--red),#E74C3C);color:#fff;padding:.85rem 1.9rem;border-radius:9px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(192,57,43,.45);transition:transform .15s,box-shadow .15s;display:inline-block}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 7px 28px rgba(192,57,43,.6)}
+.btn-wa{background:#25D366;color:#fff;padding:.85rem 1.9rem;border-radius:9px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .15s,box-shadow .15s}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 7px 28px rgba(37,211,102,.5)}
+.hero-stats{display:flex;justify-content:center;gap:2.5rem;margin-top:3rem;flex-wrap:wrap}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold)}
+.stat-lbl{color:#C5A882;font-size:.75rem;font-weight:600;letter-spacing:.04em}
+
+/* SECTIONS */
+.sec{padding:4rem 1.2rem}
+.sec-alt{background:linear-gradient(180deg,#fff8f0,var(--cream))}
+.sec-dark{background:linear-gradient(135deg,#3B0A0A,var(--brown))}
+.sec-center{text-align:center}
+.eyebrow{display:inline-block;color:var(--red);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.55rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,5vw,2.6rem);color:var(--dark);line-height:1.18;margin-bottom:.7rem}
+.sec-sub{color:var(--muted);font-size:.93rem;max-width:520px;margin:0 auto 2.4rem}
+.divider-spice{text-align:center;padding:.6rem 0;font-size:1.3rem;letter-spacing:.7rem;opacity:.3}
+
+/* WHY CARDS */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;max-width:960px;margin:0 auto}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem 1.5rem;transition:transform .22s,box-shadow .22s}
+.why-card:hover{transform:translateY(-5px);box-shadow:0 10px 36px var(--shadow)}
+.why-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.7rem}
+.wi-red{background:linear-gradient(135deg,#FDEAEA,#F9C9C9)}
+.wi-gold{background:linear-gradient(135deg,#FEF8E7,#FCE5A3)}
+.wi-green{background:linear-gradient(135deg,#E8F8EE,#B8EDD0)}
+.wi-orange{background:linear-gradient(135deg,#FEF0E7,#FDD0A8)}
+.why-title{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:700;color:var(--dark);margin-bottom:.4rem}
+.why-desc{color:var(--muted);font-size:.84rem;line-height:1.65}
+
+/* PRODUCTS */
+.search-wrap{position:relative;max-width:440px;margin:0 auto 1.5rem}
+.search-input{width:100%;padding:.85rem 1rem .85rem 2.9rem;border:2px solid var(--border);border-radius:50px;font-size:.93rem;background:#fff;color:var(--dark);outline:none;font-family:'Inter',sans-serif;transition:border-color .2s}
+.search-input:focus{border-color:var(--red)}
+.search-ico{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.4;pointer-events:none}
+.pills{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.pill{padding:.4rem 1.05rem;border-radius:22px;font-size:.8rem;font-weight:600;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s}
+.pill.on,.pill:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.results-info{text-align:center;color:var(--muted);font-size:.82rem;margin-bottom:1.2rem;min-height:1.2rem}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.3rem;max-width:1100px;margin:0 auto}
+.prod-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}
+.prod-card:hover{transform:translateY(-5px);box-shadow:0 14px 44px var(--shadow)}
+.prod-img{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.prod-badge{position:absolute;top:.75rem;right:.75rem;background:var(--red);color:#fff;font-size:.65rem;font-weight:700;padding:.22rem .6rem;border-radius:12px;letter-spacing:.04em;z-index:1}
+.prod-body{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+.prod-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:.3rem}
+.prod-desc{color:var(--muted);font-size:.82rem;line-height:1.6;flex:1;margin-bottom:.85rem}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.prod-price{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--red)}
+.prod-price small{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);font-weight:400}
+.btn-order{background:#25D366;color:#fff;padding:.5rem .95rem;border-radius:8px;font-size:.78rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:.3rem;white-space:nowrap;transition:background .15s,transform .12s;cursor:pointer}
+.btn-order:hover{background:#1ebe59;transform:scale(1.05)}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem;max-width:920px;margin:0 auto}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem}
+.stars{color:var(--gold);font-size:.95rem;letter-spacing:.1em;margin-bottom:.7rem}
+.testi-text{color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:1rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.95rem;flex-shrink:0}
+.aname{font-weight:700;font-size:.85rem;color:var(--dark)}
+.acity{font-size:.75rem;color:var(--muted)}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:1fr;gap:2rem;max-width:820px;margin:0 auto}
+@media(min-width:640px){.about-wrap{grid-template-columns:1.1fr 1fr}}
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:2rem}
+.about-card p{color:var(--muted);font-size:.92rem;line-height:1.85;margin-bottom:.9rem}
+.about-card p:last-child{margin-bottom:0}
+.val-item{display:flex;gap:1rem;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1rem 1.2rem;margin-bottom:.75rem}
+.val-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.val-h{font-weight:700;font-size:.9rem;color:var(--dark);margin-bottom:.15rem}
+.val-p{color:var(--muted);font-size:.8rem;line-height:1.55}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:820px;margin:0 auto}
+@media(min-width:640px){.contact-wrap{grid-template-columns:1fr 1fr}}
+.form-card,.info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.8rem}
+.form-card h3,.info-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);margin-bottom:1.2rem}
+.fg{margin-bottom:.95rem}
+.fg label{display:block;font-size:.78rem;font-weight:700;color:var(--dark);margin-bottom:.35rem;letter-spacing:.02em}
+.fg input,.fg select,.fg textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--dark);background:#fff;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red)}
+.fg textarea{height:96px;resize:vertical}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--red),#E74C3C);color:#fff;padding:.9rem;border-radius:9px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:opacity .2s,transform .12s;font-family:'Inter',sans-serif}
+.btn-submit:hover{opacity:.9;transform:translateY(-1px)}
+.ci-item{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border)}
+.ci-item:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ci-ico{font-size:1.35rem;flex-shrink:0;margin-top:.05rem}
+.ci-lbl{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.15rem}
+.ci-val{font-size:.9rem;font-weight:600;color:var(--dark)}
+.ci-val a{color:var(--red);text-decoration:none}
+.wa-btns{display:flex;flex-direction:column;gap:.55rem;margin-top:1.2rem}
+.wa-btn-link{display:flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.7rem 1rem;border-radius:9px;text-decoration:none;font-weight:700;font-size:.87rem;transition:background .15s}
+.wa-btn-link:hover{background:#1ebe59}
+.map-box{margin-top:1.2rem;border-radius:12px;overflow:hidden;height:150px;background:linear-gradient(135deg,#E8D5C0,#D4B896);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;color:var(--muted);font-size:.82rem}
+
+/* FAQ */
+.faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:.7rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:13px;overflow:hidden}
+.faq-btn{width:100%;background:none;border:none;padding:1.1rem 1.25rem;text-align:left;font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .15s}
+.faq-btn:hover{color:var(--red)}
+.faq-arrow{font-size:.95rem;color:var(--muted);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-ans{display:none;padding:0 1.25rem 1.1rem;color:var(--muted);font-size:.87rem;line-height:1.75}
+.faq-item.open .faq-ans{display:block}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,#3B0A0A,var(--brown));padding:3.5rem 1.2rem;text-align:center}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.3rem);color:#fff;margin-bottom:.7rem}
+.cta-banner p{color:#C5A882;font-size:.95rem;margin-bottom:1.8rem}
+.cta-wa-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--brown);color:#C5A882;padding:2.5rem 1.2rem 1.8rem}
+.footer-inner{max-width:900px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr;gap:2rem;margin-bottom:2rem}
+@media(min-width:600px){.footer-top{grid-template-columns:1.4fr 1fr 1fr}}
+.footer-brand .logo-text{font-size:1.3rem;margin-bottom:.25rem}
+.footer-brand .logo-sub{font-size:.7rem;margin-bottom:1rem}
+.footer-brand p{font-size:.83rem;line-height:1.7;color:#B09070;margin-bottom:1rem}
+.footer-brand .footer-wa{display:flex;flex-direction:column;gap:.45rem}
+.footer-wa a{color:#25D366;font-size:.85rem;font-weight:600;text-decoration:none}
+.footer-col h4{font-family:'Playfair Display',serif;color:#fff;font-size:1rem;margin-bottom:.8rem;font-weight:700}
+.footer-col a{display:block;color:#B09070;font-size:.85rem;text-decoration:none;margin-bottom:.4rem;transition:color .15s;cursor:pointer}
+.footer-col a:hover{color:var(--gold)}
+.footer-col address{font-style:normal;color:#B09070;font-size:.85rem;line-height:1.8}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;text-align:center;font-size:.78rem;opacity:.55}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:1.5rem;right:1.2rem;z-index:900;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.65rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);animation:waPulse 2.5s infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5)}50%{box-shadow:0 4px 34px rgba(37,211,102,.85),0 0 0 12px rgba(37,211,102,.1)}}
+
+/* TOAST */
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%) translateY(50px);background:#25D366;color:#fff;padding:.7rem 1.5rem;border-radius:10px;font-size:.87rem;font-weight:600;z-index:2000;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* FADE-IN */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.fi.vis{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:767px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-wa{display:none}
+  .sec{padding:2.8rem 1.2rem}
+}
+@media(min-width:768px){
+  .hamburger{display:none}
+  .mobile-nav{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav>
+  <div class="logo" onclick="showPage('home')">
+    <div class="logo-circle" style="background:none;box-shadow:none;width:50px;height:50px"><img src="data:image/webp;base64,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" alt="Bhure Foods Logo" style="height:46px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))"></div>
+    <div>
+      <div class="logo-text">Bhure Foods</div>
+      <div class="logo-sub">Good Food for Good People</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('products')">Products</a></li>
+    <li><a onclick="showPage('about')">About Us</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" class="nav-wa">💬 Order Now</a>
+  <button class="hamburger" onclick="toggleMenu()" id="hamBtn">☰</button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="showPage('home');closeMenu()">🏠 Home</a>
+  <a onclick="showPage('products');closeMenu()">🛒 Products</a>
+  <a onclick="showPage('about');closeMenu()">📖 About Us</a>
+  <a onclick="showPage('contact');closeMenu()">📞 Contact</a>
+  <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" onclick="closeMenu()">💬 Order on WhatsApp</a>
+</div>
+
+<!-- ══════════════════ HOME ══════════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+    <div class="hero-inner">
+      <div style="margin-bottom:1.2rem">
+        <img src="data:image/webp;base64,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" alt="Bhure Foods" style="height:100px;width:auto;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,.3))">
+      </div>
+      <div class="badge-pill">🌿 Karnataka's Finest Since Day One</div>
+      <h1>Authentic Indian<br/><em>Spices & Masalas</em></h1>
+      <p class="hero-p">Premium quality homemade-style masalas — made with traditional Karnataka recipes, 100% natural ingredients, packed fresh for every order.</p>
+      <div class="hero-btns">
+        <button class="btn-red" onclick="showPage('products')">🛒 View Products</button>
+        <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" class="btn-wa">💬 Order on WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">13+</div><div class="stat-lbl">Products</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-lbl">Natural</div></div>
+        <div><div class="stat-num">3</div><div class="stat-lbl">WA Order Lines</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="sec sec-center">
+    <span class="eyebrow">Why Choose Us</span>
+    <h2 class="sec-title">Quality You Can Taste,<br/>Trust You Can Feel</h2>
+    <p class="sec-sub">Every masala is made with care, using the finest ingredients sourced directly from trusted Karnataka farms.</p>
+    <div class="why-grid fi">
+      <div class="why-card">
+        <div class="why-icon wi-red">🌶️</div>
+        <div class="why-title">Premium Ingredients</div>
+        <div class="why-desc">We source finest Byadagi, Guntur and Kashmir chillies directly from reputed farms for bold flavor and deep color.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon wi-gold">📦</div>
+        <div class="why-title">Freshly Packed</div>
+        <div class="why-desc">Every batch is ground and packed fresh to lock in maximum aroma, flavor and nutrition. No stale shelves.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon wi-green">✅</div>
+        <div class="why-title">No Artificial Colors</div>
+        <div class="why-desc">Pure, natural spices — no artificial colors, no preservatives, no shortcuts. Honest food for your family.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon wi-orange">🏡</div>
+        <div class="why-title">Homemade Style</div>
+        <div class="why-desc">Traditional Karnataka recipes recreate the warmth and richness of home-cooked food in every sprinkle.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-spice">🌶️ 🌿 ✨ 🌿 🌶️</div>
+
+  <!-- FEATURED -->
+  <section class="sec sec-alt sec-center">
+    <span class="eyebrow">Bestsellers</span>
+    <h2 class="sec-title">Featured Products</h2>
+    <p class="sec-sub">A taste of what makes Bhure Foods special. Browse our full range for every spice your kitchen needs.</p>
+    <div class="prod-grid fi" id="featuredGrid"></div>
+    <div style="margin-top:2.2rem">
+      <button class="btn-red" onclick="showPage('products')">View All 13 Products →</button>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec sec-center">
+    <span class="eyebrow">Happy Customers</span>
+    <h2 class="sec-title">What People Are Saying</h2>
+    <div class="testi-grid fi">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The Kashmir Chilli Powder is outstanding — deep color, rich aroma, not overly hot. My biryani has never looked better. Ordering again and again!"</p>
+        <div class="testi-author"><div class="avatar">P</div><div><div class="aname">Priya Sharma</div><div class="acity">Bangalore</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Garam Masala from Bhure Foods is on another level. I can smell the whole spice blend — no comparison to store brands. Fresh, pure, and flavorful!"</p>
+        <div class="testi-author"><div class="avatar">R</div><div><div class="aname">Rajesh Kumar</div><div class="acity">Mysuru</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Sambar Masala and Shenga Chutney Powder both reminded me of my grandmother's kitchen. This is what authentic Karnataka taste means!"</p>
+        <div class="testi-author"><div class="avatar">A</div><div><div class="aname">Anitha Rao</div><div class="acity">Dharwad</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec sec-alt sec-center">
+    <span class="eyebrow">Common Questions</span>
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <div class="faq-list fi">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">How do I place an order? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">Simply tap any "Order on WhatsApp" button. You'll be connected to our team directly. Share the product name and quantity — we'll confirm and arrange delivery.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">What is the minimum order quantity? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">All prices are listed per kilogram. You can order as little as 250g for most products. Bulk orders (5kg+) may be eligible for special pricing — just ask us on WhatsApp.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Do you use artificial colors or preservatives? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">Never. All Bhure Foods products are made from 100% natural spices with no artificial colors, no preservatives, and no additives. Pure food, guaranteed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Where do you deliver? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">We deliver across Karnataka and ship pan-India for larger orders. Contact us on WhatsApp to confirm delivery to your location and estimated timelines.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">How long do products stay fresh? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">Stored in a cool, dry, airtight container, our spice powders stay fresh for 6–12 months. We pack fresh on every order, so freshness starts when you receive it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">Is online payment required? <span class="faq-arrow">▾</span></button>
+        <div class="faq-ans">No online payment required! Simply order via WhatsApp and we'll guide you through a convenient payment method — UPI, cash on delivery, or bank transfer available.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <h2>Ready to Taste the Difference?</h2>
+    <p>Order directly via WhatsApp — fast, simple, no payment app needed.</p>
+    <div class="cta-wa-row">
+      <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" class="btn-wa">💬 +91 89048 84426</a>
+      <a href="https://wa.me/919008724162?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" class="btn-wa">💬 +91 90087 24162</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ PRODUCTS ══════════════════ -->
+<div class="page" id="page-products">
+  <section class="sec sec-center">
+    <span class="eyebrow">Product Catalogue</span>
+    <h2 class="sec-title">Our Spices & Masalas</h2>
+    <p class="sec-sub">All made fresh with authentic ingredients. Tap any product to order directly on WhatsApp.</p>
+    <div class="search-wrap">
+      <span class="search-ico">🔍</span>
+      <input class="search-input" type="text" id="searchInput" placeholder="Search products…" oninput="renderProducts()"/>
+    </div>
+    <div class="pills" id="pillsRow">
+      <button class="pill on" data-cat="all" onclick="setCat(this,'all')">All (13)</button>
+      <button class="pill" data-cat="chilli" onclick="setCat(this,'chilli')">🌶️ Chilli Powders</button>
+      <button class="pill" data-cat="masala" onclick="setCat(this,'masala')">🍛 Masalas</button>
+      <button class="pill" data-cat="basic" onclick="setCat(this,'basic')">🌿 Basic Spices</button>
+      <button class="pill" data-cat="special" onclick="setCat(this,'special')">⭐ Specialties</button>
+    </div>
+    <div class="results-info" id="resultsInfo"></div>
+    <div class="prod-grid" id="allGrid"></div>
+  </section>
+</div>
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<div class="page" id="page-about">
+  <section class="sec sec-center">
+    <span class="eyebrow">Our Story</span>
+    <h2 class="sec-title">About Bhure Foods</h2>
+    <p class="sec-sub">A brand born in a Karnataka kitchen — built on trust, flavor, and generations of tradition.</p>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="about-wrap fi">
+      <div class="about-card">
+        <div style="font-size:2.8rem;margin-bottom:1rem">🌶️</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--dark);margin-bottom:1rem">Our Story</h3>
+        <p>Bhure Foods was born from a simple belief: every family deserves access to spices and masalas that taste like they were made at home — because they were.</p>
+        <p>Rooted in Karnataka's rich culinary heritage, we bring together traditional recipes and the finest regional ingredients — Byadagi chillies for vibrant color, Kashmir chillies for gentle warmth, and locally sourced spices for unmatched freshness.</p>
+        <p>Today, we serve households across Karnataka and beyond, delivering authentic flavors that make Indian cooking truly special. Every batch is made with the same love and care as the very first one.</p>
+        <p><strong style="color:var(--red)">Our mission:</strong> to provide high-quality food products that bring rich taste and aroma to every kitchen — one masala at a time.</p>
+      </div>
+      <div>
+        <div class="val-item"><div class="val-icon">🌿</div><div><div class="val-h">100% Natural</div><div class="val-p">No artificial colors, no preservatives. Every ingredient on the label goes into the product — nothing more.</div></div></div>
+        <div class="val-item"><div class="val-icon">🏡</div><div><div class="val-h">Traditional Recipes</div><div class="val-p">Karnataka homemade-style blends refined over generations, not factory formulas or chemical shortcuts.</div></div></div>
+        <div class="val-item"><div class="val-icon">📦</div><div><div class="val-h">Packed Fresh</div><div class="val-p">Every order is packed fresh so you receive maximum flavor, aroma and shelf life from day one.</div></div></div>
+        <div class="val-item"><div class="val-icon">🤝</div><div><div class="val-h">Customer First</div><div class="val-p">Order via WhatsApp and speak to a real person. We care about your experience, not just the transaction.</div></div></div>
+        <div class="val-item"><div class="val-icon">🌾</div><div><div class="val-h">Source Transparency</div><div class="val-p">We partner with trusted local Karnataka farmers and spice traders for consistent, premium quality.</div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<div class="page" id="page-contact">
+  <section class="sec sec-center">
+    <span class="eyebrow">Get In Touch</span>
+    <h2 class="sec-title">Contact Bhure Foods</h2>
+    <p class="sec-sub">Reach out via WhatsApp for the fastest response, or fill the form and we'll get back to you shortly.</p>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="contact-wrap">
+      <div class="form-card fi">
+        <h3>Send an Enquiry</h3>
+        <div class="fg"><label>Your Name *</label><input type="text" id="cName" placeholder="e.g. Priya Sharma"/></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" id="cPhone" placeholder="+91 98765 43210"/></div>
+        <div class="fg"><label>City / Location</label><input type="text" id="cCity" placeholder="e.g. Bengaluru, Mysuru…"/></div>
+        <div class="fg">
+          <label>Product of Interest</label>
+          <select id="cProd">
+            <option value="">Select a product…</option>
+            <option>Kashmir Chilli Powder – ₹540/kg</option>
+            <option>Byadagi Chilli Powder – ₹440/kg</option>
+            <option>Guntur Chilli Powder – ₹340/kg</option>
+            <option>Medium Chilli Powder – ₹240/kg</option>
+            <option>Curry Masala – ₹500/kg</option>
+            <option>Kanda Lahsun Masala – ₹400/kg</option>
+            <option>Chaat Masala – ₹300/kg</option>
+            <option>Garam Masala – ₹600/kg</option>
+            <option>Sambar Masala – ₹500/kg</option>
+            <option>Haldi Powder – ₹300/kg</option>
+            <option>Dhaniya Powder – ₹300/kg</option>
+            <option>Shenga Chutney Powder – ₹300/kg</option>
+            <option>Khatta Meetha Imli Bit – ₹300/kg</option>
+            <option>Multiple Products</option>
+          </select>
+        </div>
+        <div class="fg"><label>Quantity (kg)</label><input type="text" id="cQty" placeholder="e.g. 1 kg, 500g, 5 kg"/></div>
+        <div class="fg"><label>Message / Questions</label><textarea id="cMsg" placeholder="Any special requirements, questions or bulk order details…"></textarea></div>
+        <button class="btn-submit" onclick="sendEnquiry()">💬 Send via WhatsApp</button>
+      </div>
+      <div class="info-card fi">
+        <h3>Business Details</h3>
+        <div class="ci-item">
+          <div class="ci-ico">🏢</div>
+          <div><div class="ci-lbl">Business Name</div><div class="ci-val">Bhure Foods</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🏭</div>
+          <div>
+            <div class="ci-lbl">Manufacturing Unit</div>
+            <div class="ci-val" style="font-size:.85rem">Bhure Enterprises, Shed No. D-543<br/>2nd Gate Industrial Estate,<br/>Gokul Road, Hubli – 580030</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🏪</div>
+          <div>
+            <div class="ci-lbl">Retail Store</div>
+            <div class="ci-val" style="font-size:.85rem">Store No. 4, Shriram Complex,<br/>Kamaripeth, Hubli – 580028</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🛡️</div>
+          <div>
+            <div class="ci-lbl">FSSAI License No.</div>
+            <div class="ci-val" style="color:var(--green);font-weight:700">11222336000188</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">⏰</div>
+          <div><div class="ci-lbl">Business Hours</div><div class="ci-val">Monday – Saturday<br/><span style="font-size:.8rem;color:var(--muted)">9:00 AM – 7:00 PM</span></div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico">🚚</div>
+          <div><div class="ci-lbl">Delivery</div><div class="ci-val">Pan-India Shipping<br/><span style="font-size:.8rem;color:var(--muted)">Same-day dispatch for local orders</span></div></div>
+        </div>
+        <div class="ci-item" style="border:none;margin-bottom:0;padding-bottom:0">
+          <div class="ci-ico">💬</div>
+          <div><div class="ci-lbl">WhatsApp Order Lines</div><div class="ci-val">3 Lines Available</div></div>
+        </div>
+        <div class="wa-btns">
+          <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" class="wa-btn-link">💬 +91 89048 84426</a>
+          <a href="https://wa.me/919008724162?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" class="wa-btn-link">💬 +91 90087 24162</a>
+          <a href="https://wa.me/918553106996?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener" class="wa-btn-link">💬 +91 85531 06996</a>
+        </div>
+        <div class="map-box" style="height:auto;padding:1rem;flex-direction:column;align-items:flex-start;gap:.3rem;background:linear-gradient(135deg,#1a0a00,#2d1a08);border:1px solid var(--border)">
+          <div style="font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.3rem">📍 Find Us in Hubli</div>
+          <div style="font-size:.8rem;color:#C5A882;line-height:1.7">
+            <strong style="color:#fff">Gokul Road:</strong> Industrial Estate, D-543, 580030<br/>
+            <strong style="color:#fff">Kamaripeth:</strong> Shriram Complex, Store 4, 580028
+          </div>
+          <a href="https://maps.google.com/?q=Hubli+Karnataka" target="_blank" style="margin-top:.6rem;font-size:.78rem;color:#25D366;font-weight:600;text-decoration:none">📌 Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener" class="float-wa" title="Order on WhatsApp">💬</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Opening WhatsApp…</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem">
+          <img src="data:image/webp;base64,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" alt="Bhure Foods Logo" style="height:52px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))">
+          <div class="logo-text" style="font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem">Bhure Foods</div>
+        </div>
+        <div class="logo-sub" style="color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.08em;margin-bottom:.8rem">Good Food for Good People</div>
+        <p>Premium homemade-style Indian spices and masalas from the heart of Karnataka. 100% natural, freshly packed, delivered to your door.</p>
+        <div class="footer-wa">
+          <a href="https://wa.me/918904884426?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener">💬 +91 89048 84426</a>
+          <a href="https://wa.me/919008724162?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener">💬 +91 90087 24162</a>
+          <a href="https://wa.me/918553106996?text=Hello%20Bhure%20Foods%2C%20I%20would%20like%20to%20order%20your%20products." target="_blank" rel="noopener">💬 +91 85531 06996</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('products')">All Products</a>
+        <a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Locations</h4>
+        <address>
+          <strong style="color:#F5D9B0;font-size:.8rem">🏭 Manufacturing Unit</strong><br/>
+          Bhure Enterprises, Shed No. D-543<br/>
+          2nd Gate Industrial Estate<br/>
+          Gokul Road, Hubli – 580030<br/><br/>
+          <strong style="color:#F5D9B0;font-size:.8rem">🏪 Retail Store</strong><br/>
+          Store No. 4, Shriram Complex<br/>
+          Kamaripeth, Hubli – 580028<br/><br/>
+          <span style="color:var(--gold);font-size:.78rem;font-weight:700">🛡️ FSSAI: 11222336000188</span>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Bhure Foods. All rights reserved. Made with ❤️ in Karnataka, India.</div>
+  </div>
+</footer>
+
+<script>
+// ── PRODUCT DATA ──────────────────────────────────────────────────────────────
+const WA = '918904884426';
+
+// SVG product images - each unique illustration
+const svgs = {
+  kashmir: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF0E8"/>
+    <ellipse cx="60" cy="85" rx="38" ry="12" fill="#C0392B" opacity=".18"/>
+    <rect x="38" y="35" width="44" height="50" rx="8" fill="#8B0000"/>
+    <rect x="38" y="35" width="44" height="50" rx="8" fill="url(#kg1)" opacity=".7"/>
+    <defs><linearGradient id="kg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E74C3C"/><stop offset="100%" stop-color="#6B0000"/></linearGradient></defs>
+    <rect x="42" y="39" width="36" height="20" rx="4" fill="white" opacity=".12"/>
+    <text x="60" y="52" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">KASHMIR</text>
+    <text x="60" y="62" text-anchor="middle" font-size="6" fill="#FFD700">CHILLI</text>
+    <rect x="46" y="67" width="28" height="2" rx="1" fill="rgba(255,255,255,.2)"/>
+    <path d="M55 28 Q60 18 65 28 Q70 15 75 25" stroke="#C0392B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="75" cy="25" r="3" fill="#E74C3C"/>
+    <circle cx="65" cy="28" r="2.5" fill="#C0392B"/>
+    <text x="60" y="98" text-anchor="middle" font-size="9" fill="#C0392B" font-weight="bold" font-family="serif">₹540/kg</text>
+  </svg>`,
+
+  byadagi: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF5F0"/>
+    <ellipse cx="60" cy="85" rx="38" ry="12" fill="#E74C3C" opacity=".15"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#B03A2E"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#bg1)" opacity=".8"/>
+    <defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E74C3C"/><stop offset="100%" stop-color="#922B21"/></linearGradient></defs>
+    <rect x="40" y="37" width="40" height="22" rx="5" fill="white" opacity=".13"/>
+    <text x="60" y="51" text-anchor="middle" font-size="6.5" fill="white" font-family="serif" font-weight="bold">BYADAGI</text>
+    <text x="60" y="61" text-anchor="middle" font-size="5.5" fill="#FFD700">CHILLI POWDER</text>
+    <path d="M48 26 Q50 16 54 26" stroke="#E74C3C" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M58 24 Q60 14 64 24" stroke="#C0392B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M68 26 Q70 16 74 26" stroke="#E74C3C" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="74" cy="26" r="2.5" fill="#E74C3C"/>
+    <circle cx="64" cy="24" r="3" fill="#C0392B"/>
+    <circle cx="54" cy="26" r="2.5" fill="#E74C3C"/>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#B03A2E" font-weight="bold" font-family="serif">₹440/kg</text>
+  </svg>`,
+
+  guntur: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF8F0"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#E67E22" opacity=".2"/>
+    <rect x="35" y="32" width="50" height="56" rx="10" fill="#D35400"/>
+    <rect x="35" y="32" width="50" height="56" rx="10" fill="url(#gg1)" opacity=".85"/>
+    <defs><linearGradient id="gg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E67E22"/><stop offset="100%" stop-color="#A04000"/></linearGradient></defs>
+    <rect x="39" y="36" width="42" height="24" rx="5" fill="white" opacity=".13"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">GUNTUR</text>
+    <text x="60" y="61" text-anchor="middle" font-size="5.5" fill="#FFD700">HOT CHILLI</text>
+    <text x="60" y="72" text-anchor="middle" font-size="9" fill="white">🔥</text>
+    <path d="M52 25 Q56 12 62 22 Q66 10 72 22" stroke="#E67E22" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="72" cy="22" r="3" fill="#E67E22"/>
+    <text x="60" y="101" text-anchor="middle" font-size="9" fill="#D35400" font-weight="bold" font-family="serif">₹340/kg</text>
+  </svg>`,
+
+  medium: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF5F5"/>
+    <ellipse cx="60" cy="86" rx="36" ry="11" fill="#E74C3C" opacity=".15"/>
+    <rect x="37" y="34" width="46" height="52" rx="9" fill="#922B21"/>
+    <rect x="37" y="34" width="46" height="52" rx="9" fill="url(#mg1)" opacity=".8"/>
+    <defs><linearGradient id="mg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E74C3C"/><stop offset="100%" stop-color="#7B241C"/></linearGradient></defs>
+    <rect x="41" y="38" width="38" height="20" rx="4" fill="white" opacity=".12"/>
+    <text x="60" y="51" text-anchor="middle" font-size="6.5" fill="white" font-family="serif" font-weight="bold">MEDIUM</text>
+    <text x="60" y="61" text-anchor="middle" font-size="5.5" fill="#FFD700">CHILLI POWDER</text>
+    <text x="60" y="70" text-anchor="middle" font-size="8" fill="white">🌶️</text>
+    <text x="60" y="98" text-anchor="middle" font-size="9" fill="#922B21" font-weight="bold" font-family="serif">₹240/kg</text>
+  </svg>`,
+
+  curry: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFFBF0"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#E67E22" opacity=".2"/>
+    <rect x="34" y="32" width="52" height="56" rx="10" fill="#D4A017"/>
+    <rect x="34" y="32" width="52" height="56" rx="10" fill="url(#cg1)" opacity=".85"/>
+    <defs><linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F39C12"/><stop offset="100%" stop-color="#9A6C00"/></linearGradient></defs>
+    <rect x="38" y="36" width="44" height="24" rx="5" fill="white" opacity=".15"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">CURRY</text>
+    <text x="60" y="61" text-anchor="middle" font-size="6" fill="white">MASALA</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">🍛</text>
+    <path d="M44 28 Q48 20 52 28" stroke="#F39C12" stroke-width="1.5" fill="none"/>
+    <path d="M55 26 Q60 16 65 26" stroke="#E67E22" stroke-width="2" fill="none"/>
+    <path d="M67 28 Q71 20 75 28" stroke="#F39C12" stroke-width="1.5" fill="none"/>
+    <text x="60" y="101" text-anchor="middle" font-size="9" fill="#9A6C00" font-weight="bold" font-family="serif">₹500/kg</text>
+  </svg>`,
+
+  kandaLahsun: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF8F5"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#C0392B" opacity=".15"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#8E2020"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#klg)" opacity=".85"/>
+    <defs><linearGradient id="klg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C0392B"/><stop offset="100%" stop-color="#6B1A1A"/></linearGradient></defs>
+    <rect x="40" y="37" width="40" height="22" rx="4" fill="white" opacity=".12"/>
+    <text x="60" y="50" text-anchor="middle" font-size="5.5" fill="white" font-family="serif" font-weight="bold">KANDA LAHSUN</text>
+    <text x="60" y="60" text-anchor="middle" font-size="6" fill="#FFD700">MASALA</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">🧅🧄</text>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#8E2020" font-weight="bold" font-family="serif">₹400/kg</text>
+  </svg>`,
+
+  chaat: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#F5FFF5"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#27AE60" opacity=".18"/>
+    <rect x="35" y="33" width="50" height="54" rx="10" fill="#1E8449"/>
+    <rect x="35" y="33" width="50" height="54" rx="10" fill="url(#chg)" opacity=".85"/>
+    <defs><linearGradient id="chg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#27AE60"/><stop offset="100%" stop-color="#145A32"/></linearGradient></defs>
+    <rect x="39" y="37" width="42" height="22" rx="5" fill="white" opacity=".14"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">CHAAT</text>
+    <text x="60" y="61" text-anchor="middle" font-size="6" fill="#FFD700">MASALA</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">✨</text>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#1E8449" font-weight="bold" font-family="serif">₹300/kg</text>
+  </svg>`,
+
+  garam: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFFAF0"/>
+    <ellipse cx="60" cy="87" rx="38" ry="12" fill="#8B0000" opacity=".18"/>
+    <rect x="33" y="31" width="54" height="58" rx="11" fill="#6B1A1A"/>
+    <rect x="33" y="31" width="54" height="58" rx="11" fill="url(#gar)" opacity=".85"/>
+    <defs><linearGradient id="gar" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#922B21"/><stop offset="100%" stop-color="#4A0E0E"/></linearGradient></defs>
+    <rect x="37" y="35" width="46" height="26" rx="5" fill="white" opacity=".13"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7.5" fill="white" font-family="serif" font-weight="bold">GARAM</text>
+    <text x="60" y="62" text-anchor="middle" font-size="6" fill="#FFD700">MASALA</text>
+    <text x="60" y="74" text-anchor="middle" font-size="10" fill="white">🌿</text>
+    <circle cx="47" cy="26" r="3" fill="#E74C3C" opacity=".7"/>
+    <circle cx="57" cy="23" r="2.5" fill="#C0392B" opacity=".8"/>
+    <circle cx="67" cy="25" r="3" fill="#E74C3C" opacity=".7"/>
+    <circle cx="77" cy="24" r="2" fill="#C0392B" opacity=".6"/>
+    <text x="60" y="102" text-anchor="middle" font-size="9" fill="#6B1A1A" font-weight="bold" font-family="serif">₹600/kg</text>
+  </svg>`,
+
+  sambar: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF5E8"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#E67E22" opacity=".2"/>
+    <rect x="35" y="33" width="50" height="54" rx="10" fill="#B7522B"/>
+    <rect x="35" y="33" width="50" height="54" rx="10" fill="url(#sam)" opacity=".85"/>
+    <defs><linearGradient id="sam" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E67E22"/><stop offset="100%" stop-color="#784212"/></linearGradient></defs>
+    <rect x="39" y="37" width="42" height="22" rx="5" fill="white" opacity=".13"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">SAMBAR</text>
+    <text x="60" y="61" text-anchor="middle" font-size="6" fill="#FFD700">MASALA</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">🍲</text>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#B7522B" font-weight="bold" font-family="serif">₹500/kg</text>
+  </svg>`,
+
+  haldi: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFFCF0"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#F1C40F" opacity=".25"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#D4AC0D"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(--hg)" opacity=".85"/>
+    <defs><linearGradient id="haldi" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F1C40F"/><stop offset="100%" stop-color="#9A7D0A"/></linearGradient></defs>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#haldi)" opacity=".85"/>
+    <rect x="40" y="37" width="40" height="22" rx="4" fill="white" opacity=".14"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">HALDI</text>
+    <text x="60" y="61" text-anchor="middle" font-size="6" fill="white">POWDER</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">💛</text>
+    <rect x="30" y="25" width="8" height="18" rx="3" fill="#F1C40F" transform="rotate(-20,34,34)"/>
+    <rect x="44" y="22" width="7" height="15" rx="3" fill="#E6B800" transform="rotate(-10,47,29)"/>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#9A7D0A" font-weight="bold" font-family="serif">₹300/kg</text>
+  </svg>`,
+
+  dhaniya: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#F5FFF8"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#27AE60" opacity=".18"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#1A6B35"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#dhan)" opacity=".85"/>
+    <defs><linearGradient id="dhan" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#27AE60"/><stop offset="100%" stop-color="#0E4D23"/></linearGradient></defs>
+    <rect x="40" y="37" width="40" height="22" rx="4" fill="white" opacity=".13"/>
+    <text x="60" y="51" text-anchor="middle" font-size="7" fill="white" font-family="serif" font-weight="bold">DHANIYA</text>
+    <text x="60" y="61" text-anchor="middle" font-size="6" fill="#FFD700">POWDER</text>
+    <text x="60" y="73" text-anchor="middle" font-size="10" fill="white">🌿</text>
+    <circle cx="52" cy="27" r="3" fill="#27AE60"/>
+    <circle cx="60" cy="24" r="3.5" fill="#2ECC71"/>
+    <circle cx="68" cy="27" r="3" fill="#27AE60"/>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#1A6B35" font-weight="bold" font-family="serif">₹300/kg</text>
+  </svg>`,
+
+  shenga: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFFBF0"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#D4A017" opacity=".2"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#A07820"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#shg)" opacity=".85"/>
+    <defs><linearGradient id="shg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4A017"/><stop offset="100%" stop-color="#7D5A0A"/></linearGradient></defs>
+    <rect x="40" y="37" width="40" height="22" rx="4" fill="white" opacity=".14"/>
+    <text x="60" y="49" text-anchor="middle" font-size="6" fill="white" font-family="serif" font-weight="bold">SHENGA</text>
+    <text x="60" y="58" text-anchor="middle" font-size="5.5" fill="white">CHUTNEY</text>
+    <text x="60" y="67" text-anchor="middle" font-size="5.5" fill="#FFD700">POWDER</text>
+    <text x="60" y="79" text-anchor="middle" font-size="10" fill="white">🥜</text>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#A07820" font-weight="bold" font-family="serif">₹300/kg</text>
+  </svg>`,
+
+  imli: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#FFF5F8"/>
+    <ellipse cx="60" cy="87" rx="36" ry="11" fill="#C0392B" opacity=".15"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="#922B40"/>
+    <rect x="36" y="33" width="48" height="54" rx="9" fill="url(#img1)" opacity=".85"/>
+    <defs><linearGradient id="img1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C0392B"/><stop offset="100%" stop-color="#6B1A2A"/></linearGradient></defs>
+    <rect x="40" y="37" width="40" height="22" rx="4" fill="white" opacity=".13"/>
+    <text x="60" y="48" text-anchor="middle" font-size="5.5" fill="white" font-family="serif" font-weight="bold">KHATTA MEETHA</text>
+    <text x="60" y="57" text-anchor="middle" font-size="5.5" fill="#FFD700">IMLI BIT</text>
+    <text x="60" y="66" text-anchor="middle" font-size="5" fill="white">(CHIGALI)</text>
+    <text x="60" y="78" text-anchor="middle" font-size="10" fill="white">🍬</text>
+    <text x="60" y="100" text-anchor="middle" font-size="9" fill="#922B40" font-weight="bold" font-family="serif">₹300/kg</text>
+  </svg>`
+};
+
+const products = [
+  {id:1, name:'Kashmir Chilli Powder', price:'₹540', cat:'chilli', svg:svgs.kashmir, badge:'Premium',
+   desc:'Rich deep-red color with mild heat. Ideal for gravies, biryanis and tandoori dishes. Sourced from Kashmir valleys.'},
+  {id:2, name:'Byadagi Chilli Powder', price:'₹440', cat:'chilli', svg:svgs.byadagi, badge:'Karnataka',
+   desc:'Karnataka\'s prized chilli — vibrant red, low heat, intense color. The secret behind restaurant-quality curries.'},
+  {id:3, name:'Guntur Chilli Powder', price:'₹340', cat:'chilli', svg:svgs.guntur, badge:'Hot 🔥',
+   desc:'Bold Andhra heat for spice lovers. Fiery, pungent and full of character. Great for pickles and hot curries.'},
+  {id:4, name:'Medium Chilli Powder', price:'₹240', cat:'chilli', svg:svgs.medium,
+   desc:'Balanced heat and color for everyday cooking. Perfect for household curries, rice dishes and chutneys.'},
+  {id:5, name:'Curry Masala', price:'₹500', cat:'masala', svg:svgs.curry, badge:'Bestseller',
+   desc:'A beautifully aromatic, well-rounded blend for vegetable, chicken and meat curries. Depth in every spoonful.'},
+  {id:6, name:'Kanda Lahsun Masala', price:'₹400', cat:'masala', svg:svgs.kandaLahsun,
+   desc:'Pungent onion and garlic masala blend — Maharashtrian-style, bold and full-flavored. Amazing in dry sabzis.'},
+  {id:7, name:'Chaat Masala', price:'₹300', cat:'masala', svg:svgs.chaat,
+   desc:'Tangy, zesty and addictive. Sprinkle on fruits, chaats or any snack for instant magic. Table spice essential.'},
+  {id:8, name:'Garam Masala', price:'₹600', cat:'masala', svg:svgs.garam, badge:'Premium',
+   desc:'A premium whole-spice blend — cardamom, cloves, cinnamon, star anise. Warming, complex and aromatic.'},
+  {id:9, name:'Sambar Masala', price:'₹500', cat:'masala', svg:svgs.sambar,
+   desc:'Authentic South Indian sambar blend. Rich, earthy and fragrant — tastes exactly like amma\'s kitchen.'},
+  {id:10, name:'Haldi Powder', price:'₹300', cat:'basic', svg:svgs.haldi,
+   desc:'Pure, bright turmeric — high curcumin content, vibrant color, earthy depth. No filler, no adulteration.'},
+  {id:11, name:'Dhaniya Powder', price:'₹300', cat:'basic', svg:svgs.dhaniya,
+   desc:'Freshly ground coriander with warm citrus notes. The backbone of most Indian curries and gravies.'},
+  {id:12, name:'Shenga Chutney Powder', price:'₹300', cat:'special', svg:svgs.shenga, badge:'Local Fav',
+   desc:'Karnataka-style roasted peanut chutney powder. Perfect with idli, dosa or mixed with steamed rice and ghee.'},
+  {id:13, name:'Khatta Meetha Imli Bit (Chigali)', price:'₹300', cat:'special', svg:svgs.imli,
+   desc:'Traditional Karnataka tamarind candy — sweet, tangy and utterly nostalgic. A beloved childhood treat!'},
+];
+
+const featuredIds = [1, 2, 5, 8, 9, 12];
+let activeCat = 'all';
+
+function waMsg(name) {
+  return encodeURIComponent('Hello Bhure Foods! I would like to order ' + name + '. Please share details and delivery info.');
+}
+
+function makeCard(p) {
+  return '<div class="prod-card" data-cat="'+p.cat+'">'
+    +'<div class="prod-img">'+(p.badge?'<span class="prod-badge">'+p.badge+'</span>':'')+p.svg+'</div>'
+    +'<div class="prod-body">'
+    +'<div class="prod-name">'+p.name+'</div>'
+    +'<div class="prod-desc">'+p.desc+'</div>'
+    +'<div class="prod-footer">'
+    +'<div class="prod-price">'+p.price+'<small>/kg</small></div>'
+    +'<a href="https://wa.me/'+WA+'?text='+waMsg(p.name)+'" target="_blank" rel="noopener" class="btn-order" onclick="toast()">💬 Order</a>'
+    +'</div></div></div>';
+}
+
+function renderFeatured() {
+  var grid = document.getElementById('featuredGrid');
+  if (!grid) return;
+  var html = '';
+  for (var i=0;i<products.length;i++) {
+    if (featuredIds.indexOf(products[i].id) > -1) html += makeCard(products[i]);
+  }
+  grid.innerHTML = html;
+}
+
+function renderProducts() {
+  var grid = document.getElementById('allGrid');
+  if (!grid) return;
+  var q = (document.getElementById('searchInput') ? document.getElementById('searchInput').value : '').toLowerCase().trim();
+  var list = [];
+  for (var i=0;i<products.length;i++) {
+    var p = products[i];
+    var catOk = activeCat === 'all' || p.cat === activeCat;
+    var qOk = !q || p.name.toLowerCase().indexOf(q) > -1 || p.desc.toLowerCase().indexOf(q) > -1;
+    if (catOk && qOk) list.push(p);
+  }
+  var info = document.getElementById('resultsInfo');
+  if (info) info.textContent = 'Showing ' + list.length + ' of ' + products.length + ' products';
+  if (!list.length) {
+    grid.innerHTML = '<p style="grid-column:1/-1;padding:3rem;color:var(--muted);text-align:center">No products found. Try a different search.</p>';
+    return;
+  }
+  var html = '';
+  for (var j=0;j<list.length;j++) html += makeCard(list[j]);
+  grid.innerHTML = html;
+}
+
+function setCat(btn, cat) {
+  activeCat = cat;
+  var pills = document.querySelectorAll('.pill');
+  for (var i=0;i<pills.length;i++) pills[i].classList.remove('on');
+  btn.classList.add('on');
+  renderProducts();
+}
+
+function showPage(name) {
+  var pages = document.querySelectorAll('.page');
+  for (var i=0;i<pages.length;i++) pages[i].classList.remove('active');
+  var p = document.getElementById('page-'+name);
+  if (p) p.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if (name === 'products') { setTimeout(renderProducts, 50); }
+  setTimeout(doFadeIn, 100);
+}
+
+function toggleMenu() {
+  var m = document.getElementById('mobileNav');
+  var open = m.classList.toggle('open');
+  document.getElementById('hamBtn').textContent = open ? '✕' : '☰';
+}
+function closeMenu() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamBtn').textContent = '☰';
+}
+
+function toggleFaq(btn) {
+  btn.closest('.faq-item').classList.toggle('open');
+}
+
+function toast() {
+  var t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2200);
+}
+
+function sendEnquiry() {
+  var name = (document.getElementById('cName').value || '').trim();
+  var phone = (document.getElementById('cPhone').value || '').trim();
+  var city = (document.getElementById('cCity').value || '').trim();
+  var prod = document.getElementById('cProd').value;
+  var qty = (document.getElementById('cQty').value || '').trim();
+  var msg = (document.getElementById('cMsg').value || '').trim();
+  var text = 'Hello Bhure Foods!\n';
+  if (name) text += 'Name: ' + name + '\n';
+  if (phone) text += 'Phone: ' + phone + '\n';
+  if (city) text += 'City: ' + city + '\n';
+  if (prod) text += 'Product: ' + prod + '\n';
+  if (qty) text += 'Quantity: ' + qty + '\n';
+  if (msg) text += 'Message: ' + msg;
+  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank');
+  toast();
+}
+
+function doFadeIn() {
+  var els = document.querySelectorAll('.fi:not(.vis)');
+  for (var i=0;i<els.length;i++) {
+    (function(el){ setTimeout(function(){ el.classList.add('vis'); }, 100); })(els[i]);
+  }
+}
+
+window.addEventListener('scroll', doFadeIn);
+window.addEventListener('load', function() {
+  renderFeatured();
+  setTimeout(doFadeIn, 200);
+});
+</script>
+</body>
+</html>
